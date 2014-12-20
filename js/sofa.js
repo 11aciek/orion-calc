@@ -1,25 +1,21 @@
-/*jslint devel: true*/
-/*global $*/
+/*global $, window*/
 $(function () {
     'use strict';
     var $result       = $('#result'),
-        $mortality    = $('#mortality'),
         $measures     = $('tr.measure'),
-        $paoFioCalc   = $('tr#pao-fio-calc'),
         $buttons      = $('.calc-button'),
-        $gammaCalc    = $('tr#gamma-calc'),
         $paoFioInputs = $('tr#pao-fio-calc').find('input'),
         $gammaInputs  = $('tr#gamma-calc').find('input');
-    
+
     function countScore() {
         var $values = $measures.find('.clicked'),
             score = 0,
             mortality;
-        
-        $values.each(function (i, cell) {
+
+        $values.each(function () {
             score += parseInt($(this).attr('class'), 10);
         });
-        
+
         if (score < 7) {
             mortality = '<10%';
         } else if (score < 10) {
@@ -33,17 +29,17 @@ $(function () {
         } else if (score > 15) {
             mortality = '>90%';
         }
-        
+
         return [score, mortality];
     }
-    
+
     $measures.on('click', function (e) {
         var $cell = $(e.target);
-        // we only want to click on cells with values
+        // we only want to click cells with values
         if ($cell.hasClass('calc-button') || $cell.is('th') || $cell.is('abbr')) {
             return null;
         }
-        
+
         if ($cell.hasClass('clicked')) {
             $cell.removeClass('clicked');
         } else {
@@ -53,14 +49,15 @@ $(function () {
         $result.html('SOFA Score:<em>' + countScore()[0] + '</em/>');
         // mortality in tooltip
         $result.attr('title', '\u2620 ' + countScore()[1]);
+        return true;
     });
-    
-    $buttons.each(function (i, button) {
-        var $button = $(button),
+
+    $buttons.each(function () {
+        var $button = $(this),
             $calc = $button.parent().parent().next();
-        
+
         $calc.hide();
-        
+
         $button.on('click', function () {
             if ($button.attr('data-status') === 'off') {
                 $button.attr('data-status', 'on');
@@ -74,28 +71,28 @@ $(function () {
             $calc.toggle();
         });
     });
-    
+
     function calculatePaO2FiO2() {
         var paO2 = Number($paoFioInputs.eq(0).val().
                     replace(',', '.')), // , -> .
             fiO2 = Number($paoFioInputs.eq(1).val().
                     replace(',', '.')), // , -> .
             result = Math.round(paO2 / fiO2);
-        
+
         if (fiO2 < 0.21 || fiO2 > 1.0) {
             return '';
         }
-        
+
         return (isNaN(result) || !isFinite(result)) ?
                 "" : result;
     }
-    
-    $paoFioInputs.each(function (i, input) {
-        $(input).on('input paste', function () {
+
+    $paoFioInputs.each(function () {
+        $(this).on('input paste', function () {
             $('#pao-fio').text(calculatePaO2FiO2());
         });
     });
-    
+
     function calculateGamma() {
         var quantity  = Number($gammaInputs.eq(0).val().
                             replace(',', '.')),
@@ -106,13 +103,13 @@ $(function () {
             weight    = Number($gammaInputs.eq(3).val().
                             replace(',', '.')),
             result    = Number(((quantity * 1000 / volume) * rate / weight) / 60).toFixed(2);
-        
+
         return (isNaN(result) || !isFinite(result)) ?
                 "" : result;
     }
-    
-    $gammaInputs.each(function (i, input) {
-        $(input).on('input paste', function () {
+
+    $gammaInputs.each(function () {
+        $(this).on('input paste', function () {
             $('#gamma').text(calculateGamma());
         });
     });
