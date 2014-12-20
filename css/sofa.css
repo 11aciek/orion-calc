@@ -3,7 +3,8 @@
 table {
     display: table;
     font-size: 0.9em;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0px;
 }
 thead>tr:first-child>th:first-child {
     -webkit-border-top-left-radius: 10px;
@@ -31,6 +32,9 @@ td {
     min-width: 100px;
     border-bottom: 2px solid #665544;
 }
+th.dborder {
+    border-color: #665544;
+}
 td, td>*, td>*>* {
    background-color: #f0f1f2;
 }
@@ -46,27 +50,28 @@ td.clicked {
 tfoot td {
     border-bottom: 1px solid #665544;
     line-height: 1.5em;
+    font-size: 0.85em;
 }
-tfoot, tfoot td:hover {
+tfoot, tfoot td:hover, .calc, .calc>td:hover {
     background-color: #f0f1f2;
     color: inherit;
     text-align: left;
     font-style: italic;
     cursor: default;
 }
-tfoot>tr:first-child {
-    border-top: 3px solid #665544;
-}
-#result {
-    background-color: #f0f1f2;
+#result, em {
+    font-style: italic;
+    padding-left: 50px;
+    text-align: left;
     font-weight: bold;
-    font-size: 2.0em;
-    border-radius: 10px;
-    border: 2px solid #665544;
-    width: 10%;
-    min-width: 180px;
+    font-size: 1.2em;
+    border-left: 1px solid #665544;
     margin: auto;
-    margin-top: 30px;
+    background-color: #665544;
+    color: #ffffff;
+}
+em {
+    font-style: normal;
 }
 input {
     width: 45px;
@@ -74,6 +79,23 @@ input {
 }
 #pao-fio, #gamma {
     margin-left: 5px;
-    border: 1px solid #665544;
     padding: 2px 4px 2px 4px;
+}
+abbr {
+    cursor: default;
+}
+.calc-button {
+    display: inline-block;
+    background-repeat: no-repeat;
+    min-width: 11px;
+    min-height: 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.calc-button[data-status='off'] {
+    background-image: url("../images/calc.png");
+    background-color: #ffffff;
+}
+.calc-button[data-status='on'] {
+    background-image: url("../images/calc_w.png");
 }

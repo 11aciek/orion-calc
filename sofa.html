@@ -25,13 +25,19 @@
                         <th>+4</th>
                     </tr>
                 </thead>
+                <tbody>
                     <tr id="Respiratory" class="measure">
-                        <th>PaO<sub>2</sub>/FiO<sub>2</sub>&sup1;</th>
+                        <th>PaO<sub>2</sub>/FiO<sub>2</sub><span class="calc-button" id="pao-fio-button" data-status="off" title="calculate"></span></th>
                         <td class="0">&gt;400</td>
                         <td class="1">&lt;400</td>
                         <td class="2">&lt;300</td>
                         <td class="3">&lt;200 with respiratory support</td>
                         <td class="4">&lt;100 with respiratory support</td>
+                    </tr>
+                    <tr id="pao-fio-calc" class="calc">
+                        <td colspan="6">
+                            <label>PaO<sub>2</sub> <input type="text" maxlength="6" placeholder="mmHg" id="pao2"/></label><label> / FiO<sub>2</sub> <input type="text" maxlength="4" placeholder="0,21-1" id="fio2"/></label> = <span id="pao-fio"></span>
+                        </td>
                     </tr>
                     <tr id="Nervous" class="measure">
                         <th>Glasgow Coma Scale</th>
@@ -42,12 +48,17 @@
                         <td class="4">&lt;6</td>
                     </tr>
                     <tr id="Cardiovascular" class="measure">
-                        <th>MAP or administration of vasopressors required&sup2</th>
+                        <th><abbr title="Mean Arterial Pressure">MAP</abbr> or administration of vasopressors<sup>&#42;</sup><span class="calc-button" id="gamma-button" data-status="off" title="calculate"></span></th>
                         <td class="0">MAP &gt;70 without vasopressors</td>
                         <td class="1">MAP &lt;70</td>
                         <td class="2">Dopamine &le;5 or Dobutamine (any dose)</td>
                         <td class="3">Dopamine &gt;5 or Epinephrine &le;0.1 or Norepinephrine &le;0.1</td>
                         <td class="4">Dopamine &gt;15 or Epinephrine &gt;0.1 or Norepinephrine &gt;0.1</td>
+                    </tr>
+                    <tr class="calc" id="gamma-calc">
+                        <td colspan="6">
+                            <label>quantity of drug: <input type="text" maxlength="4" placeholder="mg" id="drug-quantity"/></label><label> solution volume: <input type="text" maxlength="3" placeholder="ml" id="solution-volume"/></label><label> infusion rate: <input type="text" placeholder="ml/h" id="infusion-rate" maxlength="5"/></label><label> patient weight: <input type="text" maxlength="6" placeholder="kg" id="weight"/></label> =  <span id="gamma"></span>
+                        </td>
                     </tr>
                     <tr id="Liver" class="measure">
                         <th>Bilirubin (mg/dl)</th>
@@ -66,20 +77,25 @@
                         <td class="4">&lt;20</td>
                     </tr>
                     <tr id="Renal" class="measure">
-                        <th>Creatinine (mg/dl) (or urine output)</th>
+                        <th class="dborder">Creatinine (mg/dl) (or urine output)</th>
                         <td class="0">&lt;1.2</td>
                         <td class="1">1.2-1.9</td>
                         <td class="2">2.0-3.4</td>
                         <td class="3">3.5-4.9<br/>(or &lt;500 ml/d)</td>
                         <td class="4">&gt;5.0<br/>(or &lt;200 ml/d)</td>
                     </tr>
+                </tbody>
                 <tfoot>
-                    <tr><td colspan="6"><label>&sup1;PaO<sub>2</sub> <input type="text" maxlength="3" placeholder="mmHg" id="pao2"/></label><label>/FiO<sub>2</sub> <input type="text" maxlength="3" placeholder="%" id="fio2"/></label> = <span id="pao-fio"></span></td></tr>
-                    <tr><td colspan="6">&sup2;adrenergic agents administered for at least 1 hr (doses given are in &micro;g/kg/min <span id="micro" data-status="on"></span>)<br/><label>quantity of drug: <input type="text" maxlength="2" placeholder="mg" id="drug-quantity"/></label><label>solution volume: <input type="text" maxlength="2" placeholder="ml" id="solution-volume"/></label><label>infusion rate: <input type="text" placeholder="ml/h" id="infusion-rate"/></label> =  <span id="gamma"></span></td></tr>
+                    
+                    <tr>
+                        <td colspan="4">
+                            <sup>&#42;</sup>adrenergic agents administered for at least 1 hr (doses given are in &micro;g/kg/min <span id="micro" data-status="on"></span>)<br/>
+                        </td>
+                        <td colspan="2" id="result" title="&#9760; 0%">
+                            SOFA Score:<em>0</em>
+                        </td>
                 </tfoot>
             </table>
-            <div id="result">Score: 0
-            </div>
             <footer>&copy;2014<a href="mailto:mpiwoda@mp.pl"> mpiwoda</a></footer>
         </div> <!-- page -->
         <script src="js/jquery-1.11.1.min.js"></script>
