@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test</title>
+        <meta charset="utf-8" />
+        <link href="css/test.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <form>
+            <input type="text" name="masa" maxlength="3" id="masa"/>
+            <input type="text" name="wzrost" maxlength="3" id="wzrost"/>
+        </form>
+        <br />
+        <p><a id="button" href="#"></a></p>
+        <br />
+        <form>
+            <input type="text" name="bmi" maxlength="2" id="bmi" />
+        </form>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script>
+            $(function () {
+                $('#button').on('click', function() {
+                    $('#button').css({
+                        'transform': 'rotate(360deg)'
+                    }, 'linear', 3000);
+                });
+            });
+        </script>
+    </body>
+</html>

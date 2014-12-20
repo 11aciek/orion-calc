@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sofa Score</title>
+        <link href="css/sofa.css" type="text/css" rel="stylesheet"/>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div id="page">
+            <header>
+                <nav><a href="start.html" id="back">powrót</a></nav>
+                <h1>The <strong>Sequential Organ Failure Assessment Score</strong></h1>
+            </header>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="6" id="sofa">SOFA Score</th>
+                    </tr>
+                    <tr>
+                        <th>Measurement</th>
+                        <th>0</th>
+                        <th>+1</th>
+                        <th>+2</th>
+                        <th>+3</th>
+                        <th>+4</th>
+                    </tr>
+                </thead>
+                    <tr id="Respiratory" class="measure">
+                        <th>PaO<sub>2</sub>/FiO<sub>2</sub>&sup1;</th>
+                        <td class="0">&gt;400</td>
+                        <td class="1">&lt;400</td>
+                        <td class="2">&lt;300</td>
+                        <td class="3">&lt;200 with respiratory support</td>
+                        <td class="4">&lt;100 with respiratory support</td>
+                    </tr>
+                    <tr id="Nervous" class="measure">
+                        <th>Glasgow Coma Scale</th>
+                        <td class="0">15</td>
+                        <td class="1">13-14</td>
+                        <td class="2">10-12</td>
+                        <td class="3">6-9</td>
+                        <td class="4">&lt;6</td>
+                    </tr>
+                    <tr id="Cardiovascular" class="measure">
+                        <th>MAP or administration of vasopressors required&sup2</th>
+                        <td class="0">MAP &gt;70 without vasopressors</td>
+                        <td class="1">MAP &lt;70</td>
+                        <td class="2">Dopamine &le;5 or Dobutamine (any dose)</td>
+                        <td class="3">Dopamine &gt;5 or Epinephrine &le;0.1 or Norepinephrine &le;0.1</td>
+                        <td class="4">Dopamine &gt;15 or Epinephrine &gt;0.1 or Norepinephrine &gt;0.1</td>
+                    </tr>
+                    <tr id="Liver" class="measure">
+                        <th>Bilirubin (mg/dl)</th>
+                        <td class="0">&lt;1.2</td>
+                        <td class="1">1.2-1.9</td>
+                        <td class="2">2.0-5.9</td>
+                        <td class="3">6.0-11.9</td>
+                        <td class="4">&gt;12.0</td>
+                    </tr>
+                    <tr id="Coagulation" class="measure">
+                        <th>Platelets&times;10<sup>3</sup>/&micro;L</th>
+                        <td class="0">&gt;150</td>
+                        <td class="1">&lt;150</td>
+                        <td class="2">&lt;100</td>
+                        <td class="3">&lt;50</td>
+                        <td class="4">&lt;20</td>
+                    </tr>
+                    <tr id="Renal" class="measure">
+                        <th>Creatinine (mg/dl) (or urine output)</th>
+                        <td class="0">&lt;1.2</td>
+                        <td class="1">1.2-1.9</td>
+                        <td class="2">2.0-3.4</td>
+                        <td class="3">3.5-4.9<br/>(or &lt;500 ml/d)</td>
+                        <td class="4">&gt;5.0<br/>(or &lt;200 ml/d)</td>
+                    </tr>
+                <tfoot>
+                    <tr><td colspan="6">&sup1;gghhh</td></tr>
+                    <tr><td colspan="6">&sup2;adrenergic agents administered for at least 1 hr (doses given are in &micro;g/kg/min)</td></tr>
+                </tfoot>
+            </table>
+            <div id="result">Score: 0
+            </div>
+            <footer>&copy;2014<a href="mailto:mpiwoda@mp.pl"> mpiwoda</a></footer>
+        </div> <!-- page -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/sofa.js"></script>
+    </body>
+</html>

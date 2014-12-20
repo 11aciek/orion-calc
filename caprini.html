@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="caprini" />
+        <meta charset="utf-8" />
+        <title>Ryzyko ŻChZZ - model oceny ryzyka Capriniego</title>
+        <link href="css/zchzz.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="page">
+            <header>
+                <nav><a href="start.html" id="back">powrót</a></nav>
+                <h1>Zmodyfikowany model oceny ryzyka ŻChZZ wg Capriniego u chorych poddawanych zabiegom chirurgicznym</h1>
+                <h4 id="info"><a href="http://www.mp.pl/zakrzepica/wytyczneartykuly/wytyczne/show.html?id=78538"> Polskie wytyczne profilaktyki i leczenia żylnej choroby zakrzepowo-zatorowej – aktualizacja 2012</a></h4>
+            </header>
+            <form id="skala">
+                <fieldset id="main">
+                    <legend>Czynniki ryzyka</legend>
+                    <fieldset class="cskala" id="pkt1">
+                        <legend>1 pkt</legend>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="a1" value="1" /></span>wiek 41-60 lat<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="b1" value="1" /></span>mały zabieg operacyjny<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="c1" value="1" /></span>BMI &gt;25 kg/m<sup>2</sup><a data-status="on" href="" id="bmiButton" title="kalkulator BMI"></a><span id="bmiCalc"><form><input type="text" name="masa" maxlength="3" class="bmi" id="masa" placeholder="kg"/><input type="text" name="wzrost" maxlength="3" class="bmi" id="wzrost" placeholder="cm"/><input type="text" name="bmi" maxlength="2" class="bmi" id="bmi" placeholder="--"/></form></span><br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="d1" value="1" /></span>obrzęk kończyn dolnych<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="e1" value="1" /></span>żylaki kończyn dolnych<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="f1" value="1" /></span>ciąża lub okres połogu<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="g1" value="1" /></span>przebyte niewyjaśnione lub nawykowe poronienia<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="h1" value="1" /></span>doustna antykoncepcja lub hormonalna terapia zastępcza<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="i1" value="1" /></span>sepsa (&lt;1 miesiąc)<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="j1" value="1" /></span>poważna choroba płuc, w tym zapalenie płuc (&lt;1 mies.)<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="k1" value="1" /></span>zaburzenia czynności płuc<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="l1" value="1" /></span>świeży zawał serca<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="m1" value="1" /></span>zaostrzenie lub rozpoznanie niewydolności serca (&lt;1 mies.)<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="n1" value="1" /></span>choroba zapalna jelit w wywiadach<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="o1" value="1" /></span>chory leczony zachowawczo, pozostający w łóżku<br /></label>
+                    </fieldset>
+                    <fieldset class="cskala" id="pkt2">
+                        <legend>2 pkt</legend>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="a2" value="2" /></span>wiek 61-74 lat<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="b2" value="2" /></span>zabieg artroskopowy<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="c2" value="2" /></span>duży zabieg chirurgiczny otwarty (&gt;45 min)<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="d2" value="2" /></span>zabieg laparoskopowy (&gt;45 min)<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="e2" value="2" /></span>nowotwór złośliwy<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="f2" value="2" /></span>pozostawanie w łóżku (&gt;72 h)<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="g2" value="2" /></span>opatrunek gipsowy z unieruchomieniem<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="h2" value="2" /></span>cewnik w żyle centralnej<br /></label>
+                    </fieldset>
+                    <fieldset class="cskala" id="pkt3">
+                        <legend>3 pkt</legend>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="a3" value="3" /></span>wiek &ge;75 lat<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="b3" value="3" /></span>przebyta ŻChZZ<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="c3" value="3" /></span>ŻChZZ w wywiadzie rodzinnym<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="d3" value="3" /></span>czynnik V Leiden<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="e3" value="3" /></span>mutacja G20210A genu protrombiny<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="f3" value="3" /></span>antykoagulant toczniowy<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="g3" value="3" /></span>przeciwciała antykardiolipinowe<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="h3" value="3" /></span>przeciwciała anty-&beta;2-GPI<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="i3" value="3" /></span>zwiększone stężenie homocysteiny w surowicy<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="j3" value="3" /></span>małopłytkowość poheparynowa (HIT)<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="k3" value="3" /></span>inna wrodzona lub nabyta trombofilia<br /></label>
+                        </fieldset>
+                    <fieldset class="cskala" id="pkt5">
+                        <legend>5 pkt</legend>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="a5" value="5" /></span>udar mózgu (&lt;1 mies.) <br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="b5" value="5" /></span>planowa aloplastyka stawu<br /></label>
+                        <label class="odd"><span class="pkt"><input type="checkbox" name="c5" value="5" /></span>złamanie kości miednicy, kości udowej lub kości podudzia<br /></label>
+                        <label class="even"><span class="pkt"><input type="checkbox" name="d5" value="5" /></span>ostre uszkodzenie rdzenia kręgowego (&lt;1 mies.)<br /></label>
+                    </fieldset>
+                </fieldset>
+            </form>
+            <div id="summary">
+                <div id="result">0</div>
+                <div id="interpretation">ryzyko bardzo małe</div>
+            </div> <!-- summary -->
+            <footer>&copy;2014<a href="mailto:mpiwoda@mp.pl"> mpiwoda</a></footer>
+        </div> <!-- page -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/caprini.js"></script>
+    </body>
+</html>

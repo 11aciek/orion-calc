@@ -1,0 +1,94 @@
+input.bmi {
+    display: inline-block;
+    border: solid 1px black;
+    line-height: 1.2em;
+    margin: auto;
+    box-shadow: inset 0px 4px 5px silver;
+}
+
+#masa {
+    float: left;
+    border-right: solid 1px black;
+    width: 30px;
+    margin-left: 10px;
+    background-image: url("../images/masa.png");
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    padding: 2px 2px 2px 25px;
+    border-top-left-radius: 10px 10px;
+    border-bottom-left-radius: 10px 10px;
+    -moz-border-radius-top-left: 10px 10px;
+    -moz-border-radius-bottom-left: 10px 10px;
+    -webkit-border-radius-top-left: 10px 10px;
+    -webkit-border-radiu-bottom-left: 10px 10px;
+}
+
+#wzrost {
+    float: left;
+    border-left: none;
+    width: 25px;
+    background-image: url("../images/wzrost.png");
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    padding: 2px 2px 2px 30px;
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    -moz-border-radius-top-right: 10px 10px;
+    -moz-border-radius-bottom-right: 10px 10px;
+    -webkit-border-radius-top-right: 10px 10px;
+    -webkit-border-radiu-bottom-right: 10px 10px;
+}
+
+#bmiButton[data-status='on'] {
+    background-image: url("../images/r_arrow_a1.png");
+}
+#bmiButton[data-status='off'] {
+    background-image: url("../images/l_arrow_a1.png");
+}
+#bmiButton[data-status='on']:hover,
+#bmiButton[data-status='on']:active {
+    background-image: url("../images/r_arrow_a2.png");
+}
+#bmiButton[data-status='off']:hover,
+#bmiButton[data-status='off']:active {
+    background-image: url("../images/l_arrow_a2.png")
+}
+
+#bmiButton {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border: solid 2px #000000;
+    color: #665544;
+    margin-left: 10px;
+    margin-right: 8px;
+    margin-bottom: -1px;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: -999px;
+    box-shadow: 2px 4px 9px -1px black;
+}
+
+#bmiButton:hover, #bmiButton:active {
+    background-image: url("../images/r_arrow_a2.png");
+    background-repeat: no-repeat;
+    background-color: white;
+    border-color: white;
+}
+
+#bmiButton:active {
+    box-shadow: none;
+}
+
+#bmi {
+    border-radius: 10px;
+    border: solid 1px black;
+    width: 20px;
+    padding-left: 30px;
+    margin-left: 10px;
+    background-image: url(../images/bmi.png);
+    background-repeat: no-repeat;
+    background-position: 2px 1px;
+    padding: 2px 2px 2px 30px;
+}

@@ -1,0 +1,115 @@
+@import url("default.css");
+@import url("bmi.css");
+
+legend {
+    font-weight: bold;
+}
+
+fieldset {
+    border-radius: 10px;
+}
+
+fieldset#main {
+    text-align: left;
+    border-style: double;
+    margin: 20px auto 20px auto;
+}
+
+fieldset.cskala legend {
+    color: #665544;
+    background-color: #f0f1f2;
+    text-align: center;
+    border: solid 1px #665544;
+    border-radius: 5px;
+}
+
+.cskala {
+    margin: 10px auto 10px auto;
+    padding: 10px auto 10px auto;
+    line-height: 1.5em;
+}
+
+.pskala label {
+    text-align: left;
+    padding: 10px 0px 10px 5px;
+}
+.pskala label span.pkt {
+    float: right;
+    margin-top: 10px;
+}
+fieldset.pskala {
+    color: #665544;
+    border-style: double;
+}
+label {
+    display: inline-block;
+    width: 100%;
+    margin: 1px auto 1px auto;
+    border-radius: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+label.odd, label.odd sup, label.odd span {
+    background-color: #209B55;
+    color: #ffffff;
+}
+
+label.even, label.even sup, label.even span {
+    background-color: #f0f1f2;
+}
+
+label.odd:hover, label.odd:hover sup, label.odd:hover span{
+    background-color: #207445;
+}
+
+label.even:hover, label.even:hover sup, label.even:hover span{
+    background-color: #C3D8CC;
+    color: #000000;
+}
+span {
+    display: inline-block;
+}
+
+span form {
+    background-color: inherit;
+}
+
+div#summary {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.75;
+    width: 230px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: #3685E6;
+    margin: 20px auto 10px auto;
+}
+div#result {
+    float: left;
+    font-size: 2.8em;
+    font-weight: bold;
+    height: 50px;
+    width: 50px;
+    background-color: hsla(0,0%, 0%, 0);
+    color: #ffffff;
+    border-radius: 10px;
+    margin: 10px;
+}
+div#interpretation {
+    font-style: italic;
+    float: right;
+    width: 150px;
+    height: 30px;
+    padding: 20px 0px 10px 0;
+    background-color: hsla(0, 0%, 0%, 0);
+    border-radius: 5px;
+    color: #ffffff;
+    margin: 5px;
+}
+
+footer {
+    margin-top: 100px;
+}

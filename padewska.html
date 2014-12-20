@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ryzyko ŻChZZ - skala padewska</title>
+        <link href="css/zchzz.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="page">
+            <header>
+                <nav><a href="start.html" id="back">powrót</a></nav>
+                <h1>Czynniki ryzyka ŻChZZ u chorych hospitalizowanych</h1>
+                <h2>Skala Padewska Oceny Ryzyka</h2>
+                <h4 id="info"><a href="http://www.mp.pl/zakrzepica/wytyczneartykuly/wytyczne/show.html?id=78538"> Polskie wytyczne profilaktyki i leczenia żylnej choroby zakrzepowo-zatorowej – aktualizacja 2012</a></h4>
+            </header>
+            <div id="form">
+                <form id="skala">
+                    <fieldset class="pskala">
+                        <legend>Czynniki ryzyka</legend>
+                        <label class="odd">czynna choroba nowotworowa (chorzy z przerzutami do regionalnych węzłów chłonnych lub z przerzutami odległymi, którzy otrzymali chemoterapię lub radioterapię w ciągu ostatnich 6 miesięcy)<span class="pkt">3 pkt<input type="checkbox" name="a" value="3" /></span><br /></label>
+                        <label class="even">przebyta ŻChZZ (poza zakrzepicą żył powierzchownych)<span class="pkt">3 pkt<input type="checkbox" name="b" value="3" /></span><br /></label>
+                        <label class="odd">unieruchomienie (przewidywana konieczność przebywania w łóżku [z możliwością korzystania z łazienki/toalety] z powodu niesprawności chorego lub polecenia lekarza przez ≥3 dni)<span class="pkt">3 pkt<input type="checkbox" name="c" value="3" /></span><br /></label>
+                        <label class="even">rozpoznana trombofilia (niedobór antytrombiny, białka C lub S, czynnik V Leiden, mutacja G20210A genu protrombiny lub zespół antyfosfolipidowy)<span class="pkt">3 pkt<input type="checkbox" name="d" value="3" /></span><br /></label>
+                        <label class="odd">niedawny (&le;1 mies.) uraz lub zabieg operacyjny<span class="pkt">2 pkt<input type="checkbox" name="e" value="2" /></span><br /></label>
+                        <label class="even">wiek &ge;70 lat<span class="pkt">1 pkt<input type="checkbox" name="f" value="1" /></span><br /></label>
+                        <label class="odd">niewydolność serca lub niewydolność oddechowa<span class="pkt">1 pkt<input type="checkbox" name="g" value="1" /></span><br /></label>
+                        <label class="even">świeży zawał serca lub udar niedokrwienny mózgu<span class="pkt">1 pkt<input type="checkbox" name="h" value="1" /></span><br /></label>
+                        <label class="odd">ostre zakażenie lub choroba reumatologiczna<span class="pkt">1 pkt<input type="checkbox" name="i" value="1" /></span><br /></label>
+                        <label class="even"><span class="pkt">1 pkt<input type="checkbox" name="j" value="1" /></span>otyłość (BMI &ge;30 kg/m<sup>2</sup>)<a href="" data-status="on" id="bmiButton" title="kalkulator BMI"></a><span id="bmiCalc"><input type="text" name="masa" maxlength="3" class="bmi" id="masa" placeholder="kg"/><input type="text" name="wzrost" maxlength="3" class="bmi" id="wzrost" placeholder="cm"/><input type="text" name="bmi" maxlength="2" class="bmi" id="bmi" placeholder="--"/></span><br /></label>
+                        <label class="odd">leczenie hormonalne<span class="pkt">1 pkt<input type="checkbox" name="k" value="1" /></span><br /></label>
+                    </fieldset>
+                </form>
+            </div> <!-- form -->
+            <div id="summary">
+                <div id="result">0</div>
+                <div id="interpretation">niskie ryzyko ŻChZZ</div>
+            </div> <!-- summary -->
+            <footer>&copy;2014 <a href="mailto:mpiwoda@mp.pl"> mpiwoda</a></footer>
+        </div> <!-- page -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/padewska.js"></script>
+    </body>
+</html>

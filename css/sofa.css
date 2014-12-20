@@ -1,0 +1,69 @@
+@import url("default.css");
+
+table {
+    display: table;
+    font-size: 0.9em;
+    border-collapse: collapse;
+}
+thead>tr:first-child>th:first-child {
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
+}
+thead>tr:first-child>th:last-child {
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-right-radius: 10px;
+}
+th {
+    padding: 3px;
+    border-bottom: 2px solid #f0f1f2;
+}
+th, th>*{
+    color: #ffffff;
+    background-color: #209B55;
+}
+th#sofa {
+    border-bottom: 2px solid #209B55;
+}
+td {
+    padding: 3px;
+    min-width: 100px;
+    border-bottom: 2px solid #665544;
+}
+td, td>* {
+   background-color: #f0f1f2; 
+}
+td:hover{
+    background-color: #C3D8CC;
+    color: #000000;
+    cursor: pointer;
+}
+td.clicked {
+    background-color: #8fb9a1;
+    color: #ffffff;
+}
+tfoot td {
+    border-bottom: 1px solid #665544;
+}
+tfoot, tfoot td:hover {
+    background-color: #f0f1f2;
+    color: inherit;
+    text-align: left;
+    font-style: italic;
+    cursor: default;
+}
+tfoot>tr:first-child {
+    border-top: 3px solid #665544;
+}
+#result {
+    background-color: #f0f1f2;
+    font-weight: bold;
+    font-size: 2.0em;
+    border-radius: 10px;
+    border: 2px solid #665544;
+    width: 10%;
+    min-width: 180px;
+    margin: auto;
+    margin-top: 30px;
+}
