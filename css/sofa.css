@@ -31,8 +31,8 @@ td {
     min-width: 100px;
     border-bottom: 2px solid #665544;
 }
-td, td>* {
-   background-color: #f0f1f2; 
+td, td>*, td>*>* {
+   background-color: #f0f1f2;
 }
 td:hover{
     background-color: #C3D8CC;
@@ -45,6 +45,7 @@ td.clicked {
 }
 tfoot td {
     border-bottom: 1px solid #665544;
+    line-height: 1.5em;
 }
 tfoot, tfoot td:hover {
     background-color: #f0f1f2;
@@ -66,4 +67,13 @@ tfoot>tr:first-child {
     min-width: 180px;
     margin: auto;
     margin-top: 30px;
+}
+input {
+    width: 45px;
+    background-color: #ffffff;
+}
+#pao-fio, #gamma {
+    margin-left: 5px;
+    border: 1px solid #665544;
+    padding: 2px 4px 2px 4px;
 }

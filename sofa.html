@@ -74,8 +74,8 @@
                         <td class="4">&gt;5.0<br/>(or &lt;200 ml/d)</td>
                     </tr>
                 <tfoot>
-                    <tr><td colspan="6">&sup1;gghhh</td></tr>
-                    <tr><td colspan="6">&sup2;adrenergic agents administered for at least 1 hr (doses given are in &micro;g/kg/min)</td></tr>
+                    <tr><td colspan="6"><label>&sup1;PaO<sub>2</sub> <input type="text" maxlength="3" placeholder="mmHg" id="pao2"/></label><label>/FiO<sub>2</sub> <input type="text" maxlength="3" placeholder="%" id="fio2"/></label> = <span id="pao-fio"></span></td></tr>
+                    <tr><td colspan="6">&sup2;adrenergic agents administered for at least 1 hr (doses given are in &micro;g/kg/min <span id="micro" data-status="on"></span>)<br/><label>quantity of drug: <input type="text" maxlength="2" placeholder="mg" id="drug-quantity"/></label><label>solution volume: <input type="text" maxlength="2" placeholder="ml" id="solution-volume"/></label><label>infusion rate: <input type="text" placeholder="ml/h" id="infusion-rate"/></label> =  <span id="gamma"></span></td></tr>
                 </tfoot>
             </table>
             <div id="result">Score: 0
