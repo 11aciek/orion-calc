@@ -39,8 +39,8 @@ $(function () {
     
     $measures.on('click', function (e) {
         var $cell = $(e.target);
-        
-        if ($cell.hasClass('calc-button') || $cell.is('th')) {
+        // we only want to click on cells with values
+        if ($cell.hasClass('calc-button') || $cell.is('th') || $cell.is('abbr')) {
             return null;
         }
         
@@ -51,7 +51,7 @@ $(function () {
             $cell.siblings().removeClass('clicked');
         }
         $result.html('SOFA Score:<em>' + countScore()[0] + '</em/>');
-        //$mortality.html('&#9760; ' + countScore()[1]);
+        // mortality in tooltip
         $result.attr('title', '\u2620 ' + countScore()[1]);
     });
     
@@ -64,8 +64,9 @@ $(function () {
         $button.on('click', function () {
             if ($button.attr('data-status') === 'off') {
                 $button.attr('data-status', 'on');
+                // reset calculations and inputs
                 $calc.find('input').val('');
-                $('#pao-fio').text('');
+                $calc.find('span').text('');
             } else {
                 $button.attr('data-status', 'off');
                 $button.parent().removeClass('dborder');
@@ -115,7 +116,7 @@ $(function () {
             $('#gamma').text(calculateGamma());
         });
     });
-    
+    // footer at the bottom of the page
     $('footer').css({
         'position': 'absolute',
         'top': $(window).height() - 80,

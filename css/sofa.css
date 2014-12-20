@@ -1,6 +1,7 @@
 @import url("default.css");
 
 table {
+    margin-top: 100px;
     display: table;
     font-size: 0.9em;
     border-collapse: separate;
