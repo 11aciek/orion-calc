@@ -34,7 +34,8 @@ $(function () {
     }
 
     $measures.on('click', function (e) {
-        var $cell = $(e.target);
+        var $cell = $(e.target),
+            result;
         // we only want to click cells with values
         if ($cell.hasClass('calc-button') || $cell.is('th') || $cell.is('abbr')) {
             return null;
@@ -46,9 +47,10 @@ $(function () {
             $cell.addClass('clicked');
             $cell.siblings().removeClass('clicked');
         }
-        $result.html('SOFA Score:<em>' + countScore()[0] + '</em/>');
+        result = countScore();
+        $result.html('SOFA Score:<em>' + result[0] + '</em/>');
         // mortality in tooltip
-        $result.attr('title', '\u2620 ' + countScore()[1]);
+        $result.attr('title', '\u2620 ' + result[1]);
         return true;
     });
 
@@ -61,9 +63,11 @@ $(function () {
         $button.on('click', function () {
             if ($button.attr('data-status') === 'off') {
                 $button.attr('data-status', 'on');
+                // dark border class for <tr> with calc open for better look
+                $button.parent().addClass('dborder');
                 // reset calculations and inputs
                 $calc.find('input').val('');
-                $calc.find('span').text('');
+                $calc.find('span').text('??');
             } else {
                 $button.attr('data-status', 'off');
                 $button.parent().removeClass('dborder');
@@ -80,11 +84,11 @@ $(function () {
             result = Math.round(paO2 / fiO2);
 
         if (fiO2 < 0.21 || fiO2 > 1.0) {
-            return '';
+            return '??';
         }
 
         return (isNaN(result) || !isFinite(result)) ?
-                "" : result;
+                "??" : result;
     }
 
     $paoFioInputs.each(function () {
@@ -105,7 +109,7 @@ $(function () {
             result    = Number(((quantity * 1000 / volume) * rate / weight) / 60).toFixed(2);
 
         return (isNaN(result) || !isFinite(result)) ?
-                "" : result;
+                "??" : result;
     }
 
     $gammaInputs.each(function () {
